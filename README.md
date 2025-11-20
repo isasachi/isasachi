@@ -1,4 +1,4 @@
-<img width="1000" height="300" alt="image" src="https://github.com/user-attachments/assets/3abf85f5-bdf2-46a5-8511-7c2e17cc321a" />
+<img width="1000" height="300" alt="image" src="https://github.com/user-attachments/assets/ba2c3026-65dc-4ced-889c-2a0aca39f41e" />
 
 ## 💫 About Me:
 Freelance fullstack developer<br>Software Engineering @ BYU Idaho<br>I'm currently diving into the world of Java<br>Skilled in React, TailwindCSS, Nodejs, Expressjs and PostgreSQL<br>I love arroz chaufa
