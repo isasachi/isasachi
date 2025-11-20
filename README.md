@@ -1,4 +1,4 @@
-<img width="1000" height="300" alt="image" src="https://github.com/user-attachments/assets/638cb0f7-eab9-4b16-9335-3ba3a6fbe6d7" />
+<img width="1000" height="300" alt="image" src="https://github.com/user-attachments/assets/3abf85f5-bdf2-46a5-8511-7c2e17cc321a" />
 
 ## 💫 About Me:
 Freelance fullstack developer<br>Software Engineering @ BYU Idaho<br>I'm currently diving into the world of Java<br>Skilled in React, TailwindCSS, Nodejs, Expressjs and PostgreSQL<br>I love arroz chaufa
@@ -14,7 +14,7 @@ Freelance fullstack developer<br>Software Engineering @ BYU Idaho<br>I'm current
 ![](https://nirzak-streak-stats.vercel.app/?user=isasachi&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=isasachi&theme=dark&hide_border=false&include_all_commits=true&count_private=false&layout=compact)
 
-### ✍️ Random Dev Quote
+## ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
