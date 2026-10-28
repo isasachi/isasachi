@@ -26,5 +26,5 @@ text{white-space:pre;font-variant-ligatures:none}
 <clipPath id="bc"><rect x="20" y="283" width="400" height="6" rx="3"/></clipPath>
 <g clip-path="url(#bc)"><g class="bar"><rect x="20.0" y="283" width="200.4" height="6" fill="#7355dd"/><rect x="220.4" y="283" width="144.5" height="6" fill="#e34c26"/><rect x="364.9" y="283" width="52.5" height="6" fill="#663399"/><rect x="417.3" y="283" width="2.7" height="6" fill="#f1e05a"/></g></g>
 <text x="20" y="311" font-size="11" class="m">C# 50% · HTML 36% · CSS 13%</text>
-<text x="420" y="311" font-size="11" text-anchor="end" class="m">1 commit míos · hace 1 a</text>
+<text x="420" y="311" font-size="11" text-anchor="end" class="m">1 commit mío · hace 1 a</text>
 </svg>
