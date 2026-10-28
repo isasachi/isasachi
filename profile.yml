@@ -1,0 +1,71 @@
+# ─────────────────────────────────────────────────────────────
+#  Configuración del perfil. Edita este archivo y haz push:
+#  el workflow regenera los SVG y las tarjetas de proyectos solo.
+# ─────────────────────────────────────────────────────────────
+
+login: isasachi
+
+# Tablero principal (estilo neofetch). Location y Company se leen
+# de tu perfil de GitHub si los dejas vacíos.
+card:
+  host: isaac@github
+  role: Fullstack Developer
+  location: ""          # vacío = el de tu perfil de GitHub
+  company: ""           # vacío = el de tu perfil de GitHub
+  focus: Web apps · IA · Automatización
+  frameworks: React, Next.js, Node.js, .NET, FastAPI
+  markup: [HTML, CSS, SCSS]   # no se listan como "Programming"
+  contact:
+    GitHub: github.com/isasachi
+    Twitter: "@isaacsalirrosas"
+
+# Avatar ASCII: se genera desde tu foto de GitHub en cada ejecución.
+avatar:
+  rows: 38              # alto en caracteres
+  ramp: " .:-=+*#%@"    # de vacío a denso
+  color: matrix         # matrix = verdes por densidad · true = color real del píxel
+
+# Lenguajes: se calculan por bytes y por cantidad de repos
+# (tus repos propios + los proyectos destacados de abajo).
+languages:
+  top: 8
+  exclude: [Dockerfile, Makefile, Procfile, Batchfile, PowerShell, Ruby]
+  ignore_repos: [isasachi/github-slideshow]
+
+# Tech stack (panel `cat ~/.config/stack.yml`).
+stack:
+  frontend: [React, Next.js, TypeScript, three.js, HTML/CSS]
+  backend: [Node.js, Express, .NET / C#, FastAPI, Python]
+  datos: [SQL, Supabase]
+  mobile: [Flutter, Dart, PWA]
+  devops: [Git, GitHub Actions, Docker, Vercel]
+  ia: [Agentes LLM, n8n, Automatización]
+
+# Proyectos destacados: una tarjeta por proyecto, de 2 en 2.
+# Commits tuyos, lenguajes, estrellas y demo se leen de GitHub;
+# tú escribes el texto. Si el repo es de otra cuenta u organización,
+# la tarjeta lo marca como "equipo" y muestra tu aporte.
+# `demo:` es opcional (para repos sin homepage configurada).
+featured:
+  - repo: isasachi/sistemas_hub
+    title: Legacy Brand
+    description: Plataforma creativa con IA para generar anuncios y landing pages, con un worker que investiga productos.
+    stack: Next.js 16 · Supabase · OpenAI / Gemini / Claude · Playwright · Vitest
+
+  - repo: Wdd430-Team-7/Group_Project
+    title: Handmade Crafts
+    description: Marketplace de productos artesanales con perfiles de vendedor, catálogo y reseñas.
+    contribution: Reseñas y calificaciones de productos, edición de productos en el perfil del vendedor y footer.
+    stack: Next.js 14 · NextAuth · Vercel Postgres · Tailwind
+    demo: https://team7-group-project.vercel.app
+
+  - repo: tafadzwabchingore/RecipeHub
+    title: RecipeHub
+    description: Plataforma para crear, explorar y organizar recetas.
+    contribution: Autenticación con login y registro, y página de favoritos.
+    stack: Next.js 16 · React 19 · Supabase · Tailwind
+
+  - repo: isasachi/mvcMovie
+    title: MvcMovie
+    description: Catálogo de películas con CRUD completo, búsqueda por título y filtro por género.
+    stack: ASP.NET Core 8 MVC · C# · Entity Framework Core · SQLite · Razor
