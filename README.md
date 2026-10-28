@@ -11,6 +11,15 @@ Desarrollador fullstack en Perú. Construyo aplicaciones web de punta a punta co
 ### `❯ ls ~/proyectos --destacados`
 
 <!--featured:start-->
+<p>
+<a href="https://github.com/isasachi/sistemas_hub"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/featured-legacy-brand-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/featured-legacy-brand-light.svg"><img alt="Legacy Brand" src="assets/featured-legacy-brand-dark.svg" width="49%"></picture></a>
+<a href="https://github.com/Wdd430-Team-7/Group_Project"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/featured-handmade-crafts-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/featured-handmade-crafts-light.svg"><img alt="Handmade Crafts" src="assets/featured-handmade-crafts-dark.svg" width="49%"></picture></a>
+</p>
+<p>
+<a href="https://github.com/tafadzwabchingore/RecipeHub"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/featured-recipehub-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/featured-recipehub-light.svg"><img alt="RecipeHub" src="assets/featured-recipehub-dark.svg" width="49%"></picture></a>
+<a href="https://github.com/isasachi/mvcMovie"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/featured-mvcmovie-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/featured-mvcmovie-light.svg"><img alt="MvcMovie" src="assets/featured-mvcmovie-dark.svg" width="49%"></picture></a>
+</p>
+<p align="center"><sub><code>❯ open --demo</code>&nbsp; <a href="https://sistemas-hub.vercel.app">Legacy Brand</a> · <a href="https://team7-group-project.vercel.app">Handmade Crafts</a> · <a href="https://recipe-hub-vert.vercel.app">RecipeHub</a></sub></p>
 <!--featured:end-->
 
 ### `❯ cat ~/.config/stack.yml && linguist --top`

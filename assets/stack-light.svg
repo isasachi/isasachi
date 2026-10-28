@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="278" viewBox="0 0 430 278" font-family="'JetBrains Mono','Fira Code','SF Mono',Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono',monospace" role="img" aria-label="~/.config — stack">
+<style>
+text{white-space:pre;font-variant-ligatures:none}
+.k{fill:#cf222e}.d{fill:#c4cbd2}.v{fill:#1f2328}.h{fill:#0a7a8a}.m{fill:#656d76}.a{fill:#8250df}.ok{fill:#1a7f37}
+.in{opacity:0;animation:in .4s ease-out forwards}
+@keyframes in{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+.cur{animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.in,.fin{opacity:1!important}.fr{opacity:0!important}}
+</style>
+<rect x="0.5" y="0.5" width="429" height="277" rx="10" fill="#ffffff" stroke="#d0d7de"/>
+<path d="M0.5 10.5a10 10 0 0 1 10-10h409a10 10 0 0 1 10 10v20h-429z" fill="#f6f8fa"/>
+<line x1="0.5" y1="30.5" x2="429.5" y2="30.5" stroke="#d0d7de"/>
+<circle cx="18" cy="16" r="5.5" fill="#ff5f57"/><circle cx="36" cy="16" r="5.5" fill="#febc2e"/><circle cx="54" cy="16" r="5.5" fill="#28c840"/>
+<text x="215.0" y="20" text-anchor="middle" font-size="12" class="m">~/.config — stack</text>
+<text class="in" x="20" y="56" font-size="13"><tspan class="ok">❯</tspan><tspan class="v"> cat ~/.config/stack.yml</tspan></text>
+<text class="in" style="animation-delay:0.37s" x="20" y="86" font-size="13"><tspan class="h">frontend: </tspan><tspan class="v">React, Next.js, TypeScript, three.js,</tspan></text>
+<text class="in" style="animation-delay:0.44s" x="20" y="110" font-size="13"><tspan class="h">          </tspan><tspan class="v">HTML/CSS</tspan></text>
+<text class="in" style="animation-delay:0.51s" x="20" y="134" font-size="13"><tspan class="h">backend:  </tspan><tspan class="v">Node.js, Express, .NET / C#, FastAPI,</tspan></text>
+<text class="in" style="animation-delay:0.58s" x="20" y="158" font-size="13"><tspan class="h">          </tspan><tspan class="v">Python</tspan></text>
+<text class="in" style="animation-delay:0.65s" x="20" y="182" font-size="13"><tspan class="h">datos:    </tspan><tspan class="v">SQL, Supabase</tspan></text>
+<text class="in" style="animation-delay:0.72s" x="20" y="206" font-size="13"><tspan class="h">mobile:   </tspan><tspan class="v">Flutter, Dart, PWA</tspan></text>
+<text class="in" style="animation-delay:0.79s" x="20" y="230" font-size="13"><tspan class="h">devops:   </tspan><tspan class="v">Git, GitHub Actions, Docker, Vercel</tspan></text>
+<text class="in" style="animation-delay:0.86s" x="20" y="254" font-size="13"><tspan class="h">ia:       </tspan><tspan class="v">Agentes LLM, n8n, Automatización</tspan></text>
+</svg>
