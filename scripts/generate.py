@@ -29,11 +29,12 @@ README = ROOT / "README.md"
 API = "https://api.github.com/graphql"
 FONT = "'JetBrains Mono','Fira Code','SF Mono',Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono',monospace"
 CW = 0.62  # ancho de carácter / tamaño de fuente (margen para fuentes anchas)
+AV_CW = 0.6  # ancho de celda del avatar: se fuerza con textLength, no depende de la fuente
 
 THEMES = {
     "dark": dict(bg="#0d1117", bar="#161b22", border="#30363d", text="#c9d1d9", muted="#6e7681",
                  dots="#3d444d", key="#ff7b72", head="#56d4dd", accent="#d2a8ff", ok="#7ee787",
-                 warn="#e3b341", mx=["#145c2a", "#1c8a3c", "#24b14c", "#3ee06a", "#8dffa8"], mxg="#d4ffdd",
+                 warn="#e3b341", mx=["#11602a", "#18913d", "#20bd4f", "#33e163", "#62f58a"], mxg="#d4ffdd",
                  lv=["#21262d", "#0e4429", "#006d32", "#26a641", "#39d353"]),
     "light": dict(bg="#ffffff", bar="#f6f8fa", border="#d0d7de", text="#1f2328", muted="#656d76",
                   dots="#c4cbd2", key="#cf222e", head="#0a7a8a", accent="#8250df", ok="#1a7f37",
@@ -290,7 +291,7 @@ def avatar_rows_svg(grid, theme, t, x0, y0, fs, lh, color, ramp=" .:-=+*#%@", ch
             else:
                 fill = color
             if ch == " ":
-                fill = cur
+                fill = cur or fill
             if fill != cur and buf:
                 spans.append(f'<tspan fill="{cur}">{escape(buf)}</tspan>')
                 buf = ""
@@ -299,7 +300,11 @@ def avatar_rows_svg(grid, theme, t, x0, y0, fs, lh, color, ramp=" .:-=+*#%@", ch
         if buf.strip():
             spans.append(f'<tspan fill="{cur}">{escape(buf.rstrip())}</tspan>')
         if spans:
-            out.append(f'<text x="{x0 + dx * fs * 0.6:.1f}" y="{y0 + y * lh:.1f}">{"".join(spans)}</text>')
+            cw = fs * AV_CW
+            n = len("".join(chars[y] if chars else [ch for ch, _ in row]).rstrip())
+            # textLength fija el ancho de la fila: misma proporción con cualquier fuente monoespaciada
+            out.append(f'<text x="{x0 + dx * cw:.1f}" y="{y0 + y * lh:.1f}" textLength="{n * cw:.1f}" '
+                       f'lengthAdjust="spacing">{"".join(spans)}</text>')
     return "\n".join(out)
 
 
@@ -345,10 +350,10 @@ def card_svg(data, cfg, langs, theme, grid, today, calendar_stats) -> str:
     t = THEMES[theme]
     c = cfg["card"]
     av = cfg.get("avatar", {})
-    fs_a, lh_a = 10, 11.2
+    fs_a, lh_a = av.get("font_size", 9), av.get("line_height", 10)
     cols = len(grid[0]) if grid else 0
     ax, ay = 26, 58
-    av_w = cols * fs_a * CW
+    av_w = cols * fs_a * AV_CW
     fs, lh = 14, 21
     W = 62  # columnas del panel derecho
     px = ax + av_w + 34
@@ -410,8 +415,9 @@ def card_svg(data, cfg, langs, theme, grid, today, calendar_stats) -> str:
     a_kw = dict(theme=theme, t=t, x0=ax, y0=ay, fs=fs_a, lh=lh_a, color=color, ramp=ramp)
     glow = matrix and theme == "dark"  # brillo de fósforo, solo en oscuro
     avatar = ("""<defs><filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
-<feGaussianBlur stdDeviation="1.3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-</filter></defs>""" if glow else "") + f"""<g font-size="{fs_a}" style="letter-spacing:0"{' filter="url(#glow)"' if glow else ''}>
+<feGaussianBlur stdDeviation="2" result="b"/><feComponentTransfer in="b" result="h"><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+<feMerge><feMergeNode in="h"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter></defs>""" if glow else "") + f"""<g font-size="{fs_a}" style="letter-spacing:0" font-weight="600"{' filter="url(#glow)"' if glow else ''}>
 <g class="fr f1">{avatar_rows_svg(grid, chars=noisy(), **a_kw)}</g>
 <g class="fr f2">{avatar_rows_svg(grid, chars=noisy(), **a_kw)}</g>
 <g class="fr f3">{avatar_rows_svg(grid, chars=noisy(), **a_kw)}</g>
@@ -702,8 +708,8 @@ def main():
     cal = streaks(data["calendar"]["days"], today)
 
     av = cfg.get("avatar", {})
-    grid = ascii_grid(load_avatar(data, args.avatar), av.get("rows", 34), av.get("ramp", " .:-=+*#%@"),
-                      aspect=CW * 10 / 11.2)
+    grid = ascii_grid(load_avatar(data, args.avatar), av.get("rows", 44), av.get("ramp", " .:-=+*#%@"),
+                      aspect=AV_CW * av.get("font_size", 9) / av.get("line_height", 10))
 
     ASSETS.mkdir(exist_ok=True)
     hgt = lambda svg: int(re.search(r'height="(\d+)"', svg).group(1))

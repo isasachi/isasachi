@@ -21,7 +21,9 @@ card:
 
 # Avatar ASCII: se genera desde tu foto de GitHub en cada ejecución.
 avatar:
-  rows: 38              # alto en caracteres
+  rows: 44              # alto en caracteres
+  font_size: 9          # px por carácter
+  line_height: 10       # px por fila
   ramp: " .:-=+*#%@"    # de vacío a denso
   color: matrix         # matrix = verdes por densidad · true = color real del píxel
 
