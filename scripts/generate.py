@@ -378,8 +378,11 @@ def card_svg(data, cfg, langs, theme, grid, today, calendar_stats) -> str:
     two = lambda k1, v1, k2, v2: leader(k1, v1, half) + '<tspan class="d"> │ </tspan>' + leader(k2, v2, half)
     total_stars = sum(r["stars"] for r in data["repos"] if not r["fork"])
     own = sum(1 for r in data["repos"] if not r["fork"])
+    # repos de otras cuentas: los proyectos de equipo destacados (la API solo cuenta el último año)
+    org = max(data["contributedTo"], sum(1 for p in cfg.get("featured", [])
+                                         if p["repo"].split("/")[0].lower() != data["login"].lower()))
     rows += [
-        two("Repos", f"{own} (+{data['contributedTo']} org)", "Stars", total_stars),
+        two("Repos", f"{own} (+{org} equipo)", "Stars", total_stars),
         two("Commits", f"{data['commits']:,}", "Followers", data["followers"]),
         two("Contribs 12m", f"{data['calendar']['total']:,}", "Streak", f"{cur}d (max {longest}d)"),
     ]
@@ -622,7 +625,7 @@ def featured_svg(p: dict, info: dict, lay: dict, theme: str, today: dt.date, H: 
     if not segs:
         segs.append(f'<rect x="20" y="{bar_y}" width="{FW - 40}" height="6" fill="{t["dots"]}"/>')
     commits = info.get("myCommits", 0)
-    meta = f'{commits} commit{"s" if commits != 1 else ""} míos · {ago(info.get("pushedAt"), today)}'
+    meta = f'{commits} {"commit mío" if commits == 1 else "commits míos"} · {ago(info.get("pushedAt"), today)}'
     if info.get("stars"):
         meta = f'★ {info["stars"]} · ' + meta
     room = int((FW - 40) / (11 * CW)) - len(meta) - 3  # que leyenda y actividad no se pisen
